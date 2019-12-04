@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "memoryman",
+
+    "password": "",
+
     "database": "projecttwo_db",
     "host": "localhost",
     "dialect": "mysql"
