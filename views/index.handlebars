@@ -1,15 +1,55 @@
 <div id="home">
   <div class="container">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-12">
+          <h1>Welcome!</h1>
+          {{#if user}}
+          <h2>Expenses Tracker App!</h2>
+          <a href="/logout"></a>
+          {{else}}
+          <p>Please<a href="/login">log in</a></p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
     <div class="row">
-      <div class="col-12">
-        <h1>Welcome!</h1>
-        {{#if user}}
-        <h2>This is our Home Page!</h2>
-        <a href="/logout">log out</a
-        {{else}}
-        <p>Please <a href="/login">log in</a>.</p>
-        {{/if}}
+      <div class="col">
+        <section class="Budget">
+          <form id="budget-form">
+
+            <label for="mortgage">Mortgage:</label>
+            <input type="text" id="mortgage" name="mortgage" placeholder="$ amount" required="required"><br>
+
+            <label for="food">Food:</label>
+            <input type="text" id="food" name="food" placeholder="$ amount" required="required"><br>
+
+            <label for="utilities">Utilities:</label>
+            <input type="text" id="utilities" name="utilities" placeholder="$ amount" required="required"><br>
+
+            <label for="insurance">Insurance:</label>
+            <input type="text" id="insurance" name="insurance" placeholder="$ amount" required="required"><br>
+
+            <label for="transportation">Transportation:</label>
+            <input type="text" id="transportation" name="transportation" placeholder="$ amount" required="required"><br>
+
+            <label for="fun">Fun:</label>
+            <input type="text" id="fun" name="fun" placeholder="$ amount" required="required"><br>
+
+            <label for="savings">Savings:</label>
+            <input type="text" id="savings" name="savings" placeholder="$ amount" required="required"><br>
+
+            <label for="misc">Misc:</label>
+            <input type="text" id="misc" name="misc" placeholder="$ amount" required="required"><br>
+
+            <label for="debt">Debt:</label>
+            <input type="text" id="debt" name="debt" placeholder="$ amount" required="required"><br>
+
+            <input type="submit">
+          </form>
+
+        </section>
       </div>
     </div>
   </div>
-</div>
