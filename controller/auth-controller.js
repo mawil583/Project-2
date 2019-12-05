@@ -5,6 +5,8 @@ const session = require("express-session");
 const router = express.Router();
 
 // Flash
+// this is used for storing messages that lets the user know if
+// the password was typed in correctly
 router.use(
   session({
     cookie: { maxAge: 60000 },
