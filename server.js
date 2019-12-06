@@ -19,10 +19,12 @@ app.set("view engine", "handlebars");
 // Routes
 const authRoutes = require("./controller/auth-controller");
 const userRoutes = require("./controller/user-controller");
-app.use(authRoutes);
+const financeRoutes = require("./controller/finance-controller");
+app.use(authRoutes); 
 app.use(userRoutes);
+app.use(financeRoutes);
 
-const syncOptions = { force: true };
+const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
