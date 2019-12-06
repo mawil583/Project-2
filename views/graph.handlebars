@@ -1,0 +1,59 @@
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+   
+ 
+
+   <div class="chartsize">
+    <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+
+
+    <script>
+        var mortgage = 12;
+        var utilities = 13;
+        var food = 12;
+        var insurance = 12;
+        var transportation = 12;
+        var savings = 12;
+        var debt = 12;
+        var fun = 10;
+
+        var mortgageExp = 12;
+        var utilitiesExp = 13;
+        var foodExp = 12;
+        var insuranceExp = 12;
+        var transportationExp = 12;
+        var savingsExp = 12;
+        var debtExp = 12;
+        var funExp = 10;
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['Mortgage', 'Utilities', 'Food', 'Insurance', 'Transportation', 'Savings', "Debt", "Fun"],
+        datasets: [
+            { 
+                data: [mortgage, utilities, food, insurance, transportation, savings, debt, fun],
+                label: "Budget",
+                backgroundColor: "rgba(24, 23, 22, 0.77)"
+            },
+            { 
+                data: [mortgageExp, utilitiesExp, foodExp, insuranceExp, transportationExp, savingsExp, debtExp, funExp],
+                label: "Expenses",
+            backgroundColor: "rgba(32, 137, 6, 0.85)"                      
+        }
+    ]
+},
+options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+   
+    </script>

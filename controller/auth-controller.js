@@ -30,6 +30,36 @@ router.get("/", function(req, res) {
   }
 });
 
+router.get("/budget", function(req, res) {
+  if (req.user) {
+    res.render("budget", {
+      user: req.user
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+router.get("/chart", function(req, res) {
+  if (req.user) {
+    res.render("graph", {
+      user: req.user
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+router.get("/expenses", function(req, res) {
+  if (req.user) {
+    res.render("expenses", {
+      user: req.user
+    });
+  } else {
+    res.redirect("/login");
+  }
+})
+
 router.get("/login", function(req, res) {
   res.render("login", { message: req.flash("error") });
 });
