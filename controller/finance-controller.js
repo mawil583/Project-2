@@ -2,19 +2,21 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// router.get("/user/:id", function (req, res) {
-//     db.user.findOne({ where: { id: req.params.id } }).then(function (data) {
-//         res.render("user", {
-//             example: data
-//         });
-//     });
-// });
+router.get("/finance/:id", function (req, res) {
+    console.log("is working");
+    
+    db.finance.findOne({ where: { finance_id: req.params.id } }).then(function (data) {
+        res.json(data);
+        console.log(res.json(data));
+        
+    });
+});
 
-// return all
+//return all
 // router.get("/api/finances", function (req, res) {
 //     var query = {};
 //     if (req.query.id) {
-//         query.tableid = req.query.id;
+//         query.userId = req.query.id;
 //     }
 //     db.user.findAll({}).then(function (data) {
 //         res.json(data);
@@ -33,4 +35,4 @@ const db = require("../models");
 //     });
 // });
 
-// module.exports = router;
+module.exports = router;
