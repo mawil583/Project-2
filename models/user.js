@@ -16,6 +16,11 @@ module.exports = function(sequelize, DataTypes) {
       freezeTableName: true
     }
   );
+  User.associate = function(models) {
+    User.hasMany(models.finance, {
+      onDelete: "cascade"
+    });
+  };
 
   User.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
