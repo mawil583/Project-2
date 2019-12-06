@@ -8,18 +8,16 @@ input[type=email],
 textarea {
   display: block;
   width: 30%;
-  font-style: bold;
 }
-
 
 input[type=text],
 input[type=email],
 textarea {
-  height: 45px;
+  height: 35px;
   padding: 0 10px;
   font-size: 14px;
   border: 1px solid #ba382f;
-} 
+}
 
 input[type=submit] {
   padding: 10px 30px;

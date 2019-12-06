@@ -61,8 +61,10 @@ router.get("/logout", function(req, res) {
   res.redirect("/");
 });
 
-router.get("*", function(req, res) {
-  res.render("404");
-});
+
+//MOVE THIS CATCH ALL TO THE LAST CALL (FYI I HATE THIS THINGH!!!!!)
+// router.get("*", function(req, res) {
+//   res.render("404");
+// });
 
 module.exports = router;
