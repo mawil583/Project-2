@@ -22,7 +22,7 @@ const userRoutes = require("./controller/user-controller");
 app.use(authRoutes);
 app.use(userRoutes);
 
-const syncOptions = { force: false };
+const syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
