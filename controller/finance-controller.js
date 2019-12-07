@@ -1,6 +1,6 @@
-const express = require("express");
+/*const express = require("express");
 const router = express.Router();
-const db = require("../models");
+const db = require("../models");*/
 
 router.get("/finance/:id", function (req, res) {
     console.log("is working");
