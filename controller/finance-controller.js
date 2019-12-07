@@ -14,6 +14,28 @@ router.get("/finance/:id", function (req, res) {
     });
 
 });
+router.post("/api/budget", function(req, res) {
+    console.log(req.body);
+    db.finance.create(
+        {
+            mortage_b: req.body.mortage_b,
+            utilities_b: req.body.utilities_b,
+            food_b: req.body.food_b,
+            insurance_b: req.body.insurance_b,
+            transportation_b: req.body.transportation_b,
+            fun_b: req.body.fun_b,
+            savings_b: req.body.savings_b,
+            debt_b: req.body.debt_b,
+            misc_b: req.body.misc_b,
+            // dummy data
+            userId: 1
+
+        })
+    .then(function(data) {
+        res.json(data)
+    })
+})
+
 router.get("/finance/:id", function (req, res) {
 
     let mortageChart = req.body.mortgage;

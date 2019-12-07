@@ -12,15 +12,15 @@ $(document).ready(function () {
         let debt = $("#debt").val().trim();
 
         let budgetInfo = {
-            mortgage: mortgage,
-            food: food,
-            utilities: utilities,
-            insurance: insurance,
-            transportation: transportation,
-            fun: fun,
-            savings: savings,
-            misc: misc,
-            debt: debt
+            mortgage_b: mortgage,
+            food_b: food,
+            utilities_b: utilities,
+            insurance_b: insurance,
+            transportation_b: transportation,
+            fun_b: fun,
+            savings_b: savings,
+            misc_b: misc,
+            debt_b: debt
         }
 
         $
