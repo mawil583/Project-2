@@ -1,6 +1,6 @@
-const express = require("express");
+/*const express = require("express");
 const router = express.Router();
-const db = require("../models");
+const db = require("../models");*/
 
 // router.get("/user/:id", function (req, res) {
 //     db.user.findOne({ where: { id: req.params.id } }).then(function (data) {

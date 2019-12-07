@@ -22,7 +22,7 @@ router.use(passport.session());
 
 router.get("/", function(req, res) {
   if (req.user) {
-    res.render("index", {
+    res.render("expenses", {
       user: req.user
     });
   } else {
