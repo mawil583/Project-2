@@ -15,6 +15,19 @@ router.get("/finance/:id", function (req, res) {
 
 });
 
+router.get("/api/chart/", function (req, res) {
+    console.log("is working");
+
+    db.finance.findOne(
+        { where: { userId: req.user.id } })
+        .then(function (data) {
+            res.json(data);
+            // console.log(res.json(data));
+
+        });
+
+});
+
 
 router.post("/api/budget", function (req, res) {
     console.log("post api/budget: ", req.user.id);
