@@ -8,23 +8,36 @@
 
 
     <script>
-        var mortgage = 12;
-        var utilities = 13;
-        var food = 12;
-        var insurance = 12;
-        var transportation = 12;
-        var savings = 12;
-        var debt = 12;
-        var fun = 10;
+        const express = require("express");
+        const router = express.Router();
+        const db = require("../models");
 
-        var mortgageExp = 12;
-        var utilitiesExp = 13;
-        var foodExp = 12;
-        var insuranceExp = 12;
-        var transportationExp = 12;
-        var savingsExp = 12;
-        var debtExp = 12;
-        var funExp = 10;
+         db.finance.findOne({ where: { finance_id: req.params.id } }).then(function (data) {
+        res.json(data);
+        
+        
+        
+        
+
+        var mortgage = res.json(data.mortgage_b);
+        var utilities = 1;
+        var food = 1;
+        var insurance = 1;
+        var transportation = 1;
+        var savings = 1;
+        var debt = 1;
+        var fun = 1;
+
+        var mortgageExp = 1;
+        var utilitiesExp = 1;
+        var foodExp = 1;
+        var insuranceExp = 1;
+        var transportationExp = 1;
+        var savingsExp = 1;
+        var debtExp = 1;
+        var funExp = 1;
+        
+    });
     
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {

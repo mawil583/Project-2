@@ -7,7 +7,8 @@ router.get("/finance/:id", function (req, res) {
     
     db.finance.findOne({ where: { finance_id: req.params.id } }).then(function (data) {
         res.json(data);
-        console.log(res.json(data));
+        
+        
         
     });
 });

@@ -3,6 +3,7 @@ const express = require("express");
 const flash = require("connect-flash");
 const session = require("express-session");
 const router = express.Router();
+const db = require("../models");
 
 // Flash
 // this is used for storing messages that lets the user know if
@@ -41,9 +42,13 @@ router.get("/budget", function(req, res) {
 });
 
 router.get("/chart", function(req, res) {
+  db.finance.findOne({ where: { finance_id: req.params.id } }).then(function (data) {
+    // res.json(data);
+
   if (req.user) {
     res.render("graph", {
-      user: req.user
+      user: req.user,
+      data: json(data)
     });
   } else {
     res.redirect("/login");
