@@ -82,7 +82,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
     year: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     }
   },
   {
