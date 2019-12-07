@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-      allowNull: true
+      allowNull: false
     },
     mortgage_b: {
       type: DataTypes.DECIMAL(10, 2),
