@@ -28,6 +28,15 @@ router.get("/api/chart/", function (req, res) {
 
 });
 
+router.put("/api/expense", function(req, res) {
+    console.log(req.body);
+    db.finance.update(req.body, {
+        where: {userId: req.user.id}
+    }).then(function(dbPost) {
+        res.json(dbPost)
+    })
+})
+
 
 router.post("/api/budget", function (req, res) {
     console.log("post api/budget: ", req.user.id);

@@ -34,7 +34,6 @@ $(document).ready(function () {
             debt_e: debt,
             month: month,
             year: year
-
         }
 
         $
