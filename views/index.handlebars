@@ -1,26 +1,27 @@
  <div class="container">
 
-    <div class="jumbotron">
-   
+ <div class="jumbotron">
+    {{#if user}}    
       <h1 class="text-center"><span class="fa fa-dollar"></span> Penny Pincher</h1>
       <hr>
       <h2 class="text-center">Do not save what is left after spending; instead spend what is left after saving.!</h2>
       <br>
 
       <div class="text-center">
-        <a href="/budget"><button class="btn btn-lg btn-primary"><span class="fa fa-dollar"></span> Budget Amount</button></a>
-        <a href="/expenses"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> View Expenses</button></a>
-        <a href="/chart"><button class="btn btn-lg btn-primary"><span class="fa fa-bar-chart"></span> View Chart</button></a>
+        <a href="/budget"><button class="btn btn-lg btn-primary"><span class="fa fa-dollar-alt"></span> Budget Amount</button></a>
+        <a href="/expenses"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Expenses Lists</button></a>
+        <a href="/chart"><button id="viewChart" class="btn btn-lg btn-danger"><span class="fa fa-credit-chart"></span> View Expenses</button></a>
       </div>
 
     </div>
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/budget">API Budget Link</a> | <a href="/api/expenses">API Expenses List</a> | <a href="/logout">Log out</a>
-    
-    </div>
+        <p><a href="/api/budget">API Budget Link</a> | <a href="/api/expenses">API Expenses List</a> | <a href="/logout">Log out</a></p>
+    {{else}}
+    <p>Please<a href="/login">log in</a></p>
+    {{/if}}      
+      </div>
     </footer>
 
   </div>
-

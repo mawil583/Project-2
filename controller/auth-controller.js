@@ -22,13 +22,43 @@ router.use(passport.session());
 
 router.get("/", function(req, res) {
   if (req.user) {
-    res.render("expenses", {
+    res.render("index", {
       user: req.user
     });
   } else {
     res.redirect("/login");
   }
 });
+
+router.get("/budget", function(req, res) {
+  if (req.user) {
+    res.render("budget", {
+      user: req.user
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+router.get("/chart", function(req, res) {
+  if (req.user) {
+    res.render("graph", {
+      user: req.user
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+router.get("/expenses", function(req, res) {
+  if (req.user) {
+    res.render("expenses", {
+      user: req.user
+    });
+  } else {
+    res.redirect("/login");
+  }
+})
 
 router.get("/login", function(req, res) {
   res.render("login", { message: req.flash("error") });
@@ -61,8 +91,10 @@ router.get("/logout", function(req, res) {
   res.redirect("/");
 });
 
-router.get("*", function(req, res) {
-  res.render("404");
-});
+
+//MOVE THIS CATCH ALL TO THE LAST CALL (FYI I HATE THIS THINGH!!!!!)
+// router.get("*", function(req, res) {
+//   res.render("404");
+// });
 
 module.exports = router;
