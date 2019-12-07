@@ -24,7 +24,7 @@ $(document).ready(function () {
         }
 
         $
-            .post("/api/budget", { budgetInfo })
+            .post("/api/budget", budgetInfo)
             .then(console.log("successful post"));
     })
     
