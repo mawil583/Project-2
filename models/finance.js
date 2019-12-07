@@ -3,7 +3,8 @@ module.exports = function (sequelize, DataTypes) {
     finance_id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      allowNull: true
     },
     mortgage_b: {
       type: DataTypes.DECIMAL(10, 2),
