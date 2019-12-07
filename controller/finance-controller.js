@@ -17,40 +17,59 @@ router.get("/finance/:id", function (req, res) {
 
 
 router.post("/api/budget", function (req, res) {
-    console.log(req.user);
-    const userEntries = db.finance.findAll(
+    console.log("post api/budget: ", req.user.id);
+    var userEntries;
+    // we need to search through all database
+    // entries to find an entry where the 
+    // userId is equal to the currently logged
+    // in user. If that userId exists, then we set
+    // a variable userEntries equal to true. Otherwise
+    // we set it equal to false. If it is true, then
+    // then we return a message saying "you already 
+    // have a budget". if it's false, then it creates
+    // a budget
+    db.finance.findAll(
         {
             where: {
                 // req.user yields an error
                 // figure something else out
                 userId: req.user.id
             }
-        }
-    );
+        }).then(function (response) {
+            if (response.userId) {
+                userEntries = true;
+            } else {
+                userEntries = false;
+            }
+        })
+    // );
     if (userEntries) {
-        db.finance.update({
-            mortgage_b: req.body.mortgage_b,
-            mortgage_e: req.body.mortgage_e,
-            utilities_b: req.body.utilities_b,
-            utilities_e: req.body.utilities_e,
-            food_b: req.body.food_b,
-            food_e: req.body.food_e,
-            insurance_b: req.body.insurance_b,
-            insurance_e: req.body.insurance_e,
-            transportation_b: req.body.transportation_b,
-            transportation_e: req.body.transportation_e,
-            fun_b: req.body.fun_b,
-            fun_e: req.body.fun_e,
-            savings_b: req.body.savings_b,
-            savings_e: req.body.savings_e,
-            debt_e: req.body.debt_e,
-            debt_b: req.body.debt_b,
-            misc_b: req.body.misc_b,
-            misc_e: req.body.misc_e,
-            month: req.body.month,
-            year: req.body.year
-        },{where:
-            { userId: req.user.id}})
+        console.log("you already have a budget entry")
+        // db.finance.update({
+        //     mortgage_b: req.body.mortgage_b,
+        //     mortgage_e: req.body.mortgage_e,
+        //     utilities_b: req.body.utilities_b,
+        //     utilities_e: req.body.utilities_e,
+        //     food_b: req.body.food_b,
+        //     food_e: req.body.food_e,
+        //     insurance_b: req.body.insurance_b,
+        //     insurance_e: req.body.insurance_e,
+        //     transportation_b: req.body.transportation_b,
+        //     transportation_e: req.body.transportation_e,
+        //     fun_b: req.body.fun_b,
+        //     fun_e: req.body.fun_e,
+        //     savings_b: req.body.savings_b,
+        //     savings_e: req.body.savings_e,
+        //     debt_e: req.body.debt_e,
+        //     debt_b: req.body.debt_b,
+        //     misc_b: req.body.misc_b,
+        //     misc_e: req.body.misc_e,
+        //     month: req.body.month,
+        //     year: req.body.year
+        // }, {
+        //     where:
+        //         { userId: req.user.id }
+        // })
     } else {
         db.finance.create(
             {
@@ -74,6 +93,7 @@ router.post("/api/budget", function (req, res) {
                 misc_e: req.body.misc_e,
                 month: req.body.month,
                 year: req.body.year,
+                userId: req.user.id
 
                 // dummy data
                 // userId: 1
@@ -117,7 +137,7 @@ router.get("/finance/", function (req, res) {
     db.finance
         .findOne(
             { where: { userId: req.user.id } })
-            
+
         .then(function (data) {
             res.send(data, 200);
         });
