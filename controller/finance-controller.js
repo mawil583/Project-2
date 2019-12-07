@@ -17,6 +17,7 @@ router.get("/finance/:id", function (req, res) {
 
 
 router.post("/api/budget", function (req, res) {
+    console.log(req.user);
     const userEntries = db.finance.findAll(
         {
             where: {
@@ -25,11 +26,11 @@ router.post("/api/budget", function (req, res) {
                 userId: req.user.id
             }
         }
-    )
+    );
     if (userEntries) {
         db.finance.update({
-            mortage_b: req.body.mortgage_b,
-            mortage_e: req.body.mortgage_e,
+            mortgage_b: req.body.mortgage_b,
+            mortgage_e: req.body.mortgage_e,
             utilities_b: req.body.utilities_b,
             utilities_e: req.body.utilities_e,
             food_b: req.body.food_b,
@@ -53,8 +54,8 @@ router.post("/api/budget", function (req, res) {
     } else {
         db.finance.create(
             {
-                mortage_b: req.body.mortgage_b,
-                mortage_e: req.body.mortgage_e,
+                mortgage_b: req.body.mortgage_b,
+                mortgage_e: req.body.mortgage_e,
                 utilities_b: req.body.utilities_b,
                 utilities_e: req.body.utilities_e,
                 food_b: req.body.food_b,
@@ -116,6 +117,7 @@ router.get("/finance/", function (req, res) {
     db.finance
         .findOne(
             { where: { userId: req.user.id } })
+            
         .then(function (data) {
             res.send(data, 200);
         });
