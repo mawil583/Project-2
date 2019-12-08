@@ -9,7 +9,7 @@ const router = express.Router();
 // the password was typed in correctly
 router.use(
   session({
-    cookie: { maxAge: 60000 * 10 },
+    cookie: { maxAge: 60000 * 100 },
     secret: "wootwoot"
   })
 );
@@ -23,6 +23,9 @@ router.use(passport.session());
 router.get("/", function(req, res) {
   if (req.user) {
     res.render("index", {
+   
+      // when i call req.user.id, the user property 
+      // of that comes from this property name "user"
       user: req.user
     });
   } else {

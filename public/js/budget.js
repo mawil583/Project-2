@@ -37,7 +37,11 @@ $(document).ready(function () {
         }
 
         $
-            .post("/api/budget", budgetInfo)
+            .post("/api/budget", budgetInfo).then(function (data) {
+                if (data) {
+                    alert(data);
+                }
+            })
             .then(console.log("successful post"));
     })
 
