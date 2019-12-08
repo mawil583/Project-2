@@ -9,7 +9,7 @@ const router = express.Router();
 // the password was typed in correctly
 router.use(
   session({
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 60000 * 10 },
     secret: "wootwoot"
   })
 );

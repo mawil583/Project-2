@@ -1,6 +1,6 @@
-/*const express = require("express");
+const express = require("express");
 const router = express.Router();
-const db = require("../models");*/
+const db = require("../models");
 
 router.get("/finance/:id", function (req, res) {
     console.log("is working");
@@ -10,7 +10,6 @@ router.get("/finance/:id", function (req, res) {
         .then(function (data) {
             res.json(data);
             console.log(res.json(data));
-
         });
 
 });
@@ -19,20 +18,25 @@ router.get("/api/chart/", function (req, res) {
     console.log("is working");
 
     db.finance.findOne(
-        { where: { userId: req.user.id } })
+        { where: { userId: req.user.id } 
+        })
         .then(function (data) {
             res.json(data);
             // console.log(res.json(data));
-
         });
-
 });
 
 router.put("/api/expense", function(req, res) {
-    console.log(req.body);
-    db.finance.update(req.body, {
-        where: {userId: req.user.id}
-    }).then(function(dbPost) {
+    console.log("expense req.body: ",req.body);
+    let columnName = req.body.category;
+    db.finance.decrement([columnName],
+        { 
+            by: req.body.expense,
+            where: {
+                userId: req.user.id
+            }
+        })
+        .then(function(dbPost) {
         res.json(dbPost)
     })
 })
@@ -60,8 +64,10 @@ router.post("/api/budget", function (req, res) {
         }).then(function (response) {
             if (response.userId) {
                 userEntries = true;
+                console.log("userEntries was assigned true")
             } else {
                 userEntries = false;
+                console.log("userEntries was assigned false")
             }
         })
     // );
@@ -93,6 +99,7 @@ router.post("/api/budget", function (req, res) {
         //         { userId: req.user.id }
         // })
     } else {
+        console.log("userEntries false. Making new budget")
         db.finance.create(
             {
                 mortgage_b: req.body.mortgage_b,
@@ -120,6 +127,8 @@ router.post("/api/budget", function (req, res) {
                 // dummy data
                 // userId: 1
 
+            }).then(function() {
+                res.redirect("/")
             })
     }
     // console.log(req.body);
