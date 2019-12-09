@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+let string = "this is a string"
+// const auth = require("./auth-controller");
 
 router.get("/finance/:id", function (req, res) {
     console.log("is working");
@@ -11,8 +13,13 @@ router.get("/finance/:id", function (req, res) {
             res.json(data);
             console.log(res.json(data));
         });
-
 });
+
+// router.get("/home", function(req, res) {
+//     if (req.user) {
+//       res.render("index");
+//     } 
+//   });
 
 router.get("/api/chart/", function (req, res) {
     console.log("is working");
@@ -29,7 +36,7 @@ router.get("/api/chart/", function (req, res) {
 router.put("/api/expense", function(req, res) {
     console.log("expense req.body: ",req.body);
     let columnName = req.body.category;
-    db.finance.decrement([columnName],
+    db.finance.increment([columnName],
         { 
             by: req.body.expense,
             where: {
@@ -43,6 +50,9 @@ router.put("/api/expense", function(req, res) {
 
 
 router.post("/api/budget", async function (req, res) {
+    // when using a post ajax request, you cannot
+    // redirect from controller. It must be redirected
+    // from the front end.
     console.log("post api/budget: ", req.user.id);
     // var userEntries;
     var userEntries = await db.finance.findAll(
@@ -92,8 +102,12 @@ router.post("/api/budget", async function (req, res) {
                 // multiple budgets. Instead, it would need to be 
                 // where: Month = ? ...
             }}).then(function() {
+                console.log("this comes before res.redirect")
+                // res.render("index");
                 res.send("You just updated your budget");
-                res.redirect("/");
+                // res.redirect("/");
+                console.log("this comes after res.render")
+                // express.redirect("/")
             })
     
         console.log("you already have a budget entry");

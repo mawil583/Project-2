@@ -25,6 +25,7 @@ $(document).ready(function () {
             })
             .then(function () {
                 console.log("successful put request");
+                window.location.href = "http://localhost:3000/chart"
             });
         // var mortgage = data.mortgage_b;  
         // var utilities = data.utilities_b;

@@ -15,34 +15,39 @@ $(document).ready(function () {
 
         let budgetInfo = {
             mortgage_b: mortgage,
-            mortgage_e: mortgage,
+            mortgage_e: 0,
             food_b: food,
-            food_e: food,
+            food_e: 0,
             utilities_b: utilities,
-            utilities_e: utilities,
+            utilities_e: 0,
             insurance_b: insurance,
-            insurance_e: insurance,
+            insurance_e: 0,
             transportation_b: transportation,
-            transportation_e: transportation,
+            transportation_e: 0,
             fun_b: fun,
-            fun_e: fun,
+            fun_e: 0,
             savings_b: savings,
-            savings_e: savings,
+            savings_e: 0,
             misc_b: misc,
-            misc_e: misc,
+            misc_e: 0,
             debt_b: debt,
-            debt_e: debt,
+            debt_e: 0,
             month: month,
             year: year
         }
 
         $
             .post("/api/budget", budgetInfo).then(function (data) {
-                if (data) {
-                    alert(data);
-                }
+                // if (data) {
+                //     alert(data);
+                // }
+                window.location.href = "http://localhost:3000/"
             })
-            .then(console.log("successful post"));
+            // .then(console.log("successful post"),
+            // function() {
+                
+            // }
+            // );
     })
 
 })
