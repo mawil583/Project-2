@@ -28,6 +28,10 @@ $.get("/api/chart", function (data) {
     var funExp = data.fun_e;
     var miscExp = data.misc_e;
 
+    // for (let i = 0; i < 9; i++) {
+    //     if ()
+    // }
+
     var ctx = document.getElementById('myChart').getContext('2d');
 
     var myChart = new Chart(ctx, {
