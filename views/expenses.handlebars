@@ -1,50 +1,50 @@
+<header>
+    <div class="logo">Penny Pincher</div>
+    <ul class="menu-area">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="Budget">Budget</a></li>
+        <li><a href="Expenses">Expenses</a></li>
+        <li><a href="chart">Chart</a></li>
+        <li><a href="login">Login</a></li>
+        <li><a href="signup">Sign up</a></li>
+    </ul>
+</header>
+
 <div class="container">
-    <div class="jumbotron" style="background-image: url(/images/background.jpg); background-size: 100% 100%;">
-    <h1 style="text-align: center">ADD EXPENSES</h1>
-   </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card" style="border: 1px solid tomato">
+                <div class="card-header" style="background-color: tomato">
+                    <h5 style="text-align: center">ADD EXPENSES</h5>
+                </div>
+                <div class="card-body">
+                    <section class="expenses">
+                        <form id="expenses-form">
 
-<div class="row">
-    <div class="col-lg-6">
-        <div class="card">
-            <div class="card-header" style="background-color: #B9808C">
-                Expenses
-            </div>
-            <div class="card-body">
-                <section class="expenses">
-                    <form id="expenses-form">
+                            <label for="item"><strong>ITEM:</strong></label>
+                            <input type="text" id="item" name="item" placeholder="Type your item" required="required"><br>
 
-                        <label for="item">Item:</label>
-                        <input type="text" id="item" name="item" placeholder="" required="required"><br>
+                            <label for="price"><strong>PRICE:</strong></label>
+                            <input type="text" id="price" name="price" placeholder="$ amount" required="required"><br>
 
-                        <label for="price">Price:</label>
-                        <input type="text" id="price" name="price" placeholder="$ amount" required="required"><br>
+                            <select data-placeholder="" class="expenses-select" id="expenses">
+                                <option value=""><strong>CATEGORIES</strong></option>
+                                <option id="mortgage" value="mortgage"><strong>MORTGAGE</strong></option>
+                                <option id="food" value="food"><strong>FOOD</strong></option>
+                                <option id="utilities" value="utilities"><strong>UTILITIES</strong></option>
+                                <option id="insurance" value="insurance"><strong>INSURANCE</strong></option>
+                                <option id="transpo" value="transportation"><strong>TRANSPORTATION</strong></option>
+                                <option id="fun" value="fun"><strong>FUN</strong></option>
+                                <option id="savings" value="savings"><strong>SAVINGS</strong></option>
+                                <option id="misc" value="misc"><strong>MISC</strong></option>
+                                <option id="debt" value="debt"><strong>DEBT</strong></option>
+                            </select>
+                            <br>
+                            <button type="button" id="expense" class="btn btn-info">Submit</button>
 
-                        <select data-placeholder="" class="expenses-select" id="expenses">
-                            <option value="">Categories</option>
-                            <option id="mortgage" value="mortgage">Mortgage</option>
-                            <option id="food" value="food">Food</option>
-                            <option id="utilities" value="utilities">Utilities</option>
-                            <option id="insurance" value="insurance">Insurance</option>
-                            <option id="transpo" value="transportation">Transportation</option>
-                            <option id="fun" value="fun">Fun</option>
-                            <option id="savings" value="savings">Savings</option>
-                            <option id="misc" value="misc">Misc</option>
-                            <option id="debt" value="debt">Debt</option>
-                        </select>
-                        <br>
-                        <input id="expense" type="submit">
-                    </form>
-                </section>
+                        </form>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
-</div><br><br>
-<footer class="footer">
-    <div class="container">
-      <p><a href="/">Back to Home</a> | <a
-          href="/logout">Log out</a>
-
-    </div>
-  </footer>
-
-</div>

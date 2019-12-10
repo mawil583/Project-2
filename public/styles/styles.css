@@ -4,21 +4,23 @@
 
 label,
 input[type=text],
-input[type=email],
+input[type=mortgage],
 textarea {
   display: block;
   width: 50%;
   font-style: bold;
+  margin-left: 120px;
 }
 
 
 input[type=text],
-input[type=email],
+input[type=mortgage],
 textarea {
   height: 45px;
   padding: 0 10px;
   font-size: 14px;
-  border: 1px solid #2fb5ba;
+  border: 1px solid tomato;
+  margin-left: 120px;
 } 
 
 input[type=submit] {
@@ -26,9 +28,22 @@ input[type=submit] {
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
-  background: #303a3b;
   border: 0 none;
   margin-top: 10px;
+}
+
+#budget-btn, #expense {
+  margin-left: 120px;
+}
+
+.budget-select {
+  border: 1px solid tomato;
+  display: inline;
+  padding: 10px;
+}
+
+#month {
+  margin-left: 120px;
 }
 
 .expenses-select {
@@ -36,9 +51,14 @@ input[type=submit] {
   width: 50%;
   font-style: bold;
   font-size: 14px;
-  border: 1px solid #2fb5ba;
+  border: 1px solid tomato;
   height: 30px;
   padding: 0 10px;
+  margin-left: 120px;
+}
+
+h5 {
+  margin-bottom: 1px;
 }
 
 * {
@@ -161,9 +181,10 @@ header {
 .btn {
   background: tomato;
   border: none;
-  color: #fff;
+  color: black;
   padding: 10px 30px;
   text-transform: uppercase;
+  font-display: bold;
 }
 
 .circle{
@@ -171,42 +192,37 @@ header {
   border-radius: 50%;
   background: #D9B08C;
   animation: ripple 15s infinite;
-  box-shadow: 0px 0px 1px 0px #2C3531;
+  box-shadow: 0px 0px 1px 0px #D1E8E2;
 }
 
 .small{
-  width: 200px;
-  height: 200px;
-  left: -100px;
-  bottom: -100px;
+  width: 50px;
+  height: 10px;
+ bottom: -5px;
 }
 
 .medium{
-  width: 400px;
-  height: 400px;
-  left: -200px;
-  bottom: -200px;
+  width: 600px;
+  height: 100px;
+  bottom: -10px;
 }
 
 .large{
-  width: 600px;
-  height: 600px;
-  left: -300px;
-  bottom: -300px;
+  width: 2000px;
+  height: 100px;
+  bottom: -10px;
 }
 
 .xlarge{
-  width: 800px;
-  height: 800px;
-  left: -400px;
-  bottom: -400px;
+  width: 1000px;
+  height: 100px;
+   bottom: -40px;
 }
 
 .xxlarge{
   width: 1000px;
-  height: 1000px;
-  left: -500px;
-  bottom: -500px;
+  height: 100px;
+  bottom: -10px;
 }
 
 .shade1{
@@ -240,4 +256,11 @@ header {
   100%{
     transform: scale(0.8);
   }
+}
+
+.chartsize {
+  margin: 0 auto;
+  max-width: 1000px;
+  background: rgb(255, 239, 210);
+  margin-top: 15px;
 }
