@@ -112,12 +112,13 @@ header {
   font-size: 35px;
   text-transform: uppercase;
   font-style: italic;
+  font-weight: bold;
 }
 
 .menu-area {
   float: right;
   list-style: none;
-  margin: 20px;
+  margin: 0 5px;
 }
 
 .menu-area li {
@@ -138,6 +139,10 @@ header {
 
 .menu-area li a:hover {
   color: tomato;
+}
+
+.navbar-toggler {
+  background: tomato;
 }
 
 .welcome-text {
@@ -163,6 +168,7 @@ header {
   border: none;
   color: #fff;
   padding: 10px 30px;
+  margin: 5px 3px;
   text-transform: uppercase;
 }
 
@@ -241,3 +247,28 @@ header {
     transform: scale(0.8);
   }
 }
+
+h3 { 
+  line-height: 35px;
+}
+
+.welcome {
+  font-weight: bold;
+  color: #fff;
+  font-size: 55px;
+  font-style: italic;
+}
+
+.prompt {
+  color: #fff;
+  margin: 0 15px;
+}
+
+.login{
+  color: tomato;
+}
+
+.sign{
+  color: #116466;
+}
+

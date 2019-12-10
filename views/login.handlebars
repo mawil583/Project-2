@@ -1,24 +1,33 @@
-<div class="logo">Penny Pincher</div>
+<nav class="navbar navbar-expand-lg navbar-light pr-5">
+  <div class="logo">Penny Pincher</div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto menu-area">
+   
+      <li class="nav-item active">
+        <a class="menu-area" href="signup">Sign-Up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<ul class="menu-area">
-    <li class="active"><a href="/">Home</a></li>
-    <li><a href="Budget">Budget</a></li>
-    <li><a href="Expenses">Expenses</a></li>
-    <li><a href="chart">Chart</a></li>
-    <li><a href="login">Login</a></li>
-    <li><a href="signup">Sign up</a></li>
-</ul>
+
+<h1 class="text-center welcome">WELCOME</h1>
+<h5 class="text-center prompt">Sign in to continue tracking your expenses or sign up to start managing your money. </h5>
+
 <div id="loginPage">
-    <br><br><br><br>
+    <br><br>
     <div class="row">
 
         <aside class="col-sm-4"></aside>
         <aside class="col-sm-4">
-            <div class="card">
+            <div class="card mr-4 ml-4">
                 <article class="card-body">
-                    <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+                    <h4 class="card-title text-center mb-4 mt-1">Sign In</h4>
                     <hr>
-                    <p class="text-success text-center">Enter Login Info Here</p>
+                    <p class="text-center login">Enter Login Info Here</p>
                     {{#if message}}
                     <div class="alert alert-danger">{{message}}</div>
                     {{/if}}
@@ -43,7 +52,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block"> Login </button>
                         </div>
-                        <p class="text-center">Need an account? <a href="/signup">Sign Up</a></p>
+                        <p class="text-center">Need an account? <a class="sign" href="/signup">Sign Up</a></p>
                     </form>
                 </article>
             </div>

@@ -1,27 +1,71 @@
- <div class="container">
+{{!-- <header> --}}
 
- <div class="jumbotron">
-    {{#if user}}    
-      <h1 class="text-center"><span class="fa fa-dollar"></span> Penny Pincher</h1>
-      <hr>
-      <h2 class="text-center">Do not save what is left after spending; instead spend what is left after saving.!</h2>
-      <br>
+  
 
-      <div class="text-center">
-        <a href="/budget"><button class="btn btn-lg btn-primary"><span class="fa fa-dollar-alt"></span>Create/Update Budget</button></a>
-        <a href="/expenses"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span>Add Expense</button></a>
-        <a href="/chart"><button id="viewChart" class="btn btn-lg btn-danger"><span class="fa fa-credit-chart"></span>View Expenses</button></a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light pr-5">
+  <div class="logo">Penny Pincher</div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto menu-area">
+      <li class="nav-item active">
+        <a class="menu-area" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="menu-area" href="Budget">Budget</a>
+      </li>
+      <li class="nav-item">
+        <a class="menu-area" href="Expenses">Expenses</a>
+      </li>
+      <li class="nav-item">
+        <a class="menu-area" href="chart">Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="menu-area" href="/logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
+
+  {{!-- <ul class="menu-area">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="Budget">Budget</a></li>
+    <li><a href="Expenses">Expenses</a></li>
+    <li><a href="chart">Chart</a></li>
+    <li><a href="/logout">Log out</a></li>
+  </ul> --}}
+
+{{!-- </header> --}}
+
+<div class="container">
+
+  <div class="jumbotron">
+    {{#if user}}
+    <h1 class="text-center">What can Penny Pincher do for you today?</h1>
+    <hr>
+    <h3 class="text-center para">Are you ready to keep track of your daily spending? Would you like to stay on top of your monthly budget? Penny Pincher can help you. Simply create your budget, add an expense anytime you make a purchase or payment and let the chart tracker help manage your spending.</h3>
+    <br>
+
+    <div class="text-center">
+      <a href="/budget"><button class="btn btn-lg btn-primary"><span class="fa fa-dollar"></span> Create/Update
+          Budget</button></a>
+      <a href="/expenses"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Add
+          Expense</button></a>
+      <a href="/chart"><button id="viewChart" class="btn btn-lg btn-danger"><span class="fa fa-eye"></span> View
+          Expenses</button></a>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p><a href="/">Back to Home</a> | <a href="/logout">Log out</a></p>
-    {{else}}
-    <p>Please<a href="/login">log in</a></p>
-    {{/if}}      
-      </div>
-    </footer>
-
   </div>
+
+  <footer class="footer">
+    <div class="container">
+      {{!-- <p><a href="/">Back to Home</a> | <a href="/logout">Log out</a></p> --}}
+      {{else}}
+      {{!-- <p>Please<a href="/login">log in</a></p> --}}
+      {{/if}}
+    </div>
+  </footer>
+
+</div>
