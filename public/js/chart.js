@@ -17,6 +17,7 @@ $.get("/api/chart", function (data) {
     var savings = data.savings_b;
     var debt = data.debt_b
     var fun = data.fun_b
+    var misc = data.misc_b
     var mortgageExp = data.mortgage_e;
     var utilitiesExp = data.utilities_e;
     var foodExp = data.food_e;
@@ -25,6 +26,11 @@ $.get("/api/chart", function (data) {
     var savingsExp = data.savings_e;
     var debtExp = data.debt_e;
     var funExp = data.fun_e;
+    var miscExp = data.misc_e;
+
+    // for (let i = 0; i < 9; i++) {
+    //     if ()
+    // }
 
     var ctx = document.getElementById('myChart').getContext('2d');
 
@@ -34,12 +40,12 @@ $.get("/api/chart", function (data) {
             labels: ['Mortgage', 'Utilities', 'Food', 'Insurance', 'Transportation', 'Savings', "Debt", "Fun"],
             datasets: [
                 {
-                    data: [mortgage, utilities, food, insurance, transportation, savings, debt, fun],
+                    data: [mortgage, utilities, food, insurance, transportation, savings, debt, fun, misc],
                     label: "Budget",
                     backgroundColor: "rgba(24, 23, 22, 0.77)"
                 },
                 {
-                    data: [mortgageExp, utilitiesExp, foodExp, insuranceExp, transportationExp, savingsExp, debtExp, funExp],
+                    data: [mortgageExp, utilitiesExp, foodExp, insuranceExp, transportationExp, savingsExp, debtExp, funExp, miscExp],
                     label: "Expenses",
                     backgroundColor: "rgba(32, 137, 6, 0.85)"
                 }

@@ -18,6 +18,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 const authRoutes = require("./controller/auth-controller");
+// console.log(authRoutes);
 const userRoutes = require("./controller/user-controller");
 const financeRoutes = require("./controller/finance-controller");
 app.use(authRoutes); 

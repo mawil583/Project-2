@@ -1,7 +1,6 @@
 <div class="container">
 
   <div class="jumbotron" style="background-image: url(/images/jumbotron.jpg); background-size: 100% 100%;">
-
     <h1 class="text-center"><span class="fa fa-dollar"></span> Penny Pincher</h1>
     <hr>
     <h2 class="text-center">Set Your Budget Amount</h2>
@@ -9,7 +8,9 @@
   </div>
 
   <div class="row">
+
     <div class="col-lg-6">
+
       <section class="Budget">
         <form id="budget-form">
 
@@ -27,6 +28,7 @@
 
           <label for="transportation">Transportation:</label>
           <input type="text" id="transportation" name="transportation" placeholder="$ amount" required="required"><br>
+
 
         </form>
       </section>
@@ -47,7 +49,42 @@
           <label for="debt">Debt:</label>
           <input type="text" id="debt" name="debt" placeholder="$ amount" required="required"><br>
 
-          <input type="submit">
+
+          {{!-- <label for="month">Month:</label>
+                  <input type="text" id="month" name="month" placeholder="month" required="required"><br> --}}
+
+          <select data-placeholder="" id="month" name="month">
+            <option value="">Month</option>
+            <option id="January" value="January">January</option>
+            <option id="February" value="February">February</option>
+            <option id="March" value="March">March</option>
+            <option id="April" value="April">April</option>
+            <option id="May" value="May">May</option>
+            <option id="June" value="June">June</option>
+            <option id="July" value="July">July</option>
+            <option id="August" value="August">August</option>
+            <option id="September" value="September">September</option>
+            <option id="October" value="October">October</option>
+            <option id="November" value="November">November</option>
+            <option id="December" value="December">December</option>
+          </select>
+
+          <select data-placeholder="" id="year" name="year">
+            <option value="">Year</option>
+            <option id="2019" value="2019">2019</option>
+            <option id="2020" value="2020">2020</option>
+            <option id="2021" value="2021">2021</option>
+            <option id="2022" value="2022">2022</option>
+            <option id="2023" value="2023">2023</option>
+            <option id="2024" value="2024">2024</option>
+
+          </select>
+
+          {{!-- <label for="year">Year:</label>
+          <input type="text" id="year" name="year" placeholder="year" required="required"><br> --}}
+
+          <button type="button" id="budget-btn" class="btn btn-info">Submit</button>
+
         </form>
 
       </section>
@@ -56,7 +93,9 @@
 
   <footer class="footer">
     <div class="container">
+
       <p><a href="/">Back to Home</a> | <a
+
           href="/logout">Log out</a>
 
     </div>
