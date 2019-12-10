@@ -7,24 +7,237 @@ input[type=text],
 input[type=email],
 textarea {
   display: block;
-  width: 30%;
+  width: 50%;
+  font-style: bold;
 }
+
 
 input[type=text],
 input[type=email],
 textarea {
-  height: 35px;
+  height: 45px;
   padding: 0 10px;
   font-size: 14px;
-  border: 1px solid #ba382f;
-}
+  border: 1px solid #2fb5ba;
+} 
 
 input[type=submit] {
   padding: 10px 30px;
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
-  background: #ba382f;
+  background: #303a3b;
   border: 0 none;
   margin-top: 10px;
+}
+
+.expenses-select {
+  display: block;
+  width: 50%;
+  font-style: bold;
+  font-size: 14px;
+  border: 1px solid #2fb5ba;
+  height: 30px;
+  padding: 0 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #116466;
+}
+
+.fix {
+  clear: both;
+  overflow: hidden;
+}
+
+.section-padding {
+  padding: 50px 0;
+}
+
+.wrapper {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+header {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.chart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0;
+}
+
+#videoBG {
+  position: fixed;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videoBG, .welcome-text h2  {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.nav area {
+  background-color: black;
+  height: 60px;
+  position: absolute;
+  width: 100%;
+}
+
+.logo {
+  margin: 10px 50px;
+  height: 60px;
+  float: left;
+  color: #fff;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.menu-area {
+  float: right;
+  list-style: none;
+  margin: 20px;
+}
+
+.menu-area li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.menu-area li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  letter-spacing: 2px;
+}
+
+.menu-area li.active a {
+  color: tomato;
+}
+
+.menu-area li a:hover {
+  color: tomato;
+}
+
+.welcome-text {
+  top: 30%;
+  text-align: center;
+  left: 25%;
+  position: absolute;
+}
+
+.welcome-text h2 {
+  color: #fff;
+  font-size: 50px;
+  margin: 0;
+}
+
+.welcome-text p {
+  color: #fff;
+  font-size: 20px;
+}
+
+.btn {
+  background: tomato;
+  border: none;
+  color: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: #D9B08C;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #2C3531;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
 }

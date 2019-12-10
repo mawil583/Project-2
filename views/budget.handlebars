@@ -1,17 +1,16 @@
 <div class="container">
 
-  <div class="jumbotron">
-
+  <div class="jumbotron" style="background-image: url(/images/jumbotron.jpg); background-size: 100% 100%;">
     <h1 class="text-center"><span class="fa fa-dollar"></span> Penny Pincher</h1>
     <hr>
-    <h2 class="text-center">Budget Management!</h2>
-    <h3 class="text-center">Where you set an amount budget for a month</h3>
+    <h2 class="text-center">Set Your Budget Amount</h2>
     <br>
-
   </div>
 
   <div class="row">
-    <div class="col">
+
+    <div class="col-lg-6">
+
       <section class="Budget">
         <form id="budget-form">
 
@@ -30,6 +29,14 @@
           <label for="transportation">Transportation:</label>
           <input type="text" id="transportation" name="transportation" placeholder="$ amount" required="required"><br>
 
+
+        </form>
+      </section>
+    </div>
+    <div class="col-lg-6">
+      <section class="Budget">
+        <form id="budget-form">
+
           <label for="fun">Fun:</label>
           <input type="text" id="fun" name="fun" placeholder="$ amount" required="required"><br>
 
@@ -41,6 +48,7 @@
 
           <label for="debt">Debt:</label>
           <input type="text" id="debt" name="debt" placeholder="$ amount" required="required"><br>
+
 
           {{!-- <label for="month">Month:</label>
                   <input type="text" id="month" name="month" placeholder="month" required="required"><br> --}}
@@ -76,6 +84,7 @@
           <input type="text" id="year" name="year" placeholder="year" required="required"><br> --}}
 
           <button type="button" id="budget-btn" class="btn btn-info">Submit</button>
+
         </form>
 
       </section>
@@ -84,7 +93,9 @@
 
   <footer class="footer">
     <div class="container">
-      <p><a href="/api/budget">API Budget Link</a> | <a href="/api/expenses">API Expenses List</a> | <a
+
+      <p><a href="/">Back to Home</a> | <a
+
           href="/logout">Log out</a>
 
     </div>

@@ -1,10 +1,15 @@
-   <div class="container">
-        <div class="jumbotron">
-            <h1>Input Your Expenses</h1>
-        </div>
+<div class="container">
+    <div class="jumbotron" style="background-image: url(/images/background.jpg); background-size: 100% 100%;">
+    <h1 style="text-align: center">ADD EXPENSES</h1>
+   </div>
 
-        <div class="row">
-            <div class="col-lg-6">
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header" style="background-color: #B9808C">
+                Expenses
+            </div>
+            <div class="card-body">
                 <section class="expenses">
                     <form id="expenses-form">
 
@@ -14,10 +19,10 @@
                         <label for="price">Price:</label>
                         <input type="text" id="price" name="price" placeholder="$ amount" required="required"><br>
 
-                       <select data-placeholder="" class="expenses-select" id="expenses">
+                        <select data-placeholder="" class="expenses-select" id="expenses">
                             <option value="">Categories</option>
                             <option id="mortgage" value="mortgage">Mortgage</option>
-                            <option id ="food" value="food">Food</option>
+                            <option id="food" value="food">Food</option>
                             <option id="utilities" value="utilities">Utilities</option>
                             <option id="insurance" value="insurance">Insurance</option>
                             <option id="transpo" value="transportation">Transportation</option>
@@ -33,7 +38,13 @@
             </div>
         </div>
     </div>
+</div><br><br>
+<footer class="footer">
+    <div class="container">
+      <p><a href="/">Back to Home</a> | <a
+          href="/logout">Log out</a>
+
     </div>
- 
- 
- 
+  </footer>
+
+</div>
