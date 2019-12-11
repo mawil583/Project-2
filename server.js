@@ -20,9 +20,11 @@ app.set("view engine", "handlebars");
 const authRoutes = require("./controller/auth-controller");
 // console.log(authRoutes);
 const userRoutes = require("./controller/user-controller");
+const purchaseRoutes = require("./controller/purchases-controller")
 const financeRoutes = require("./controller/finance-controller");
 app.use(authRoutes); 
 app.use(userRoutes);
+app.use(purchaseRoutes);
 app.use(financeRoutes);
 
 const syncOptions = { force: false };

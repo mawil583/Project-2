@@ -1,17 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-let string = "this is a string"
-// const auth = require("./auth-controller");
 
 router.get("/finance/:id", function (req, res) {
-    console.log("is working");
 
     db.finance.findOne(
         { where: { finance_id: req.params.id } })
         .then(function (data) {
             res.json(data);
-            console.log(res.json(data));
+            // console.log(res.json(data));
         });
 });
 
@@ -34,7 +31,7 @@ router.get("/api/chart/", function (req, res) {
 });
 
 router.put("/api/expense", function(req, res) {
-    console.log("expense req.body: ",req.body);
+    // console.log("expense req.body: ",req.body);
     let columnName = req.body.category;
     db.finance.increment([columnName],
         { 
@@ -53,7 +50,7 @@ router.post("/api/budget", async function (req, res) {
     // when using a post ajax request, you cannot
     // redirect from controller. It must be redirected
     // from the front end.
-    console.log("post api/budget: ", req.user.id);
+    // console.log("post api/budget: ", req.user.id);
     // var userEntries;
     var userEntries = await db.finance.findAll(
         {
@@ -63,7 +60,7 @@ router.post("/api/budget", async function (req, res) {
                 userId: req.user.id
             }
         })
-        console.log("userEntries: ", userEntries)
+        // console.log("userEntries: ", userEntries)
     // we need to search through all database
     // entries to find an entry where the 
     // userId is equal to the currently logged

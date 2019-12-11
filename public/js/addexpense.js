@@ -25,16 +25,29 @@ $(document).ready(function () {
             })
             .then(function () {
                 console.log("successful put request");
-                window.location.href = "http://localhost:3000/chart"
+                // window.location.href = "http://localhost:3000/chart"
             });
-        // var mortgage = data.mortgage_b;  
-        // var utilities = data.utilities_b;
-        // var food = data.food_b;
-        // var insurance = data.insurance_b;
-        // var transportation = data.transportation_b;
-        // var savings = data.savings_b;
-        // var debt = data.debt_b
-        // var fun = data.fun_b
+
+        let item = $("#item").val().trim();
+        let purchaseObj = {
+            expense: expense,
+            category: category,
+            item: item
+        }
+
+        $.post("/api/purchase", purchaseObj)
+        .then(function(data) {
+            console.log("data from findAll get route",data);
+        });
+
+        $.get("/purchase")
+        .then(function(tableInfo) {
+            console.log("----------------------------------------")
+            console.log(tableInfo);
+            // console.log("-------------------------------------data from findAll get /purchase route", tableInfo);
+            
+        })
+
     });
 })
 

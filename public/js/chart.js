@@ -8,7 +8,7 @@
 //             alert(test);
 //         })
 $.get("/api/chart", function (data) {
-    console.log(data);
+    // console.log(data);
     var mortgage = data.mortgage_b;
     var utilities = data.utilities_b;
     var food = data.food_b;

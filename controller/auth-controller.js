@@ -61,6 +61,11 @@ router.get("/chart", function (req, res) {
   }
 });
 
+// This is going to be my purchase route to
+// give variables for handlebars on
+// purchase page
+
+
 router.get("/expenses", function (req, res) {
   if (req.user) {
     res.render("expenses", {

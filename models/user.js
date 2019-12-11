@@ -22,6 +22,12 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  User.associate = function(models) {
+    User.hasMany(models.purchases, {
+      onDelete: "cascade"
+    });
+  };
+
   User.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
   };
