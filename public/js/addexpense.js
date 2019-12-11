@@ -25,7 +25,7 @@ $(document).ready(function () {
             })
             .then(function () {
                 console.log("successful put request");
-                window.location.href = "serene-scrubland-73965.herokuapp.com/expenses"
+                window.location.href = "/chart"
             });
 
         let item = $("#item").val().trim();
