@@ -194,6 +194,7 @@ header {
 }
 
 .circle{
+  z-index: -1;
   position: absolute;
   border-radius: 50%;
   background: #D9B08C;
@@ -202,33 +203,34 @@ header {
 }
 
 .small{
-  width: 50px;
-  height: 10px;
- bottom: -5px;
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
 }
-
 .medium{
-  width: 600px;
-  height: 100px;
-  bottom: -10px;
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
 }
-
 .large{
-  width: 2000px;
-  height: 100px;
-  bottom: -10px;
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
 }
-
 .xlarge{
-  width: 1000px;
-  height: 100px;
-   bottom: -40px;
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
 }
-
 .xxlarge{
   width: 1000px;
-  height: 100px;
-  bottom: -10px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
 }
 
 .shade1{
@@ -296,4 +298,6 @@ h3 {
   color: #116466;
 }
 
-
+.tagline{
+  color: #fff;
+}
