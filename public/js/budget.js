@@ -41,7 +41,7 @@ $(document).ready(function () {
                 // if (data) {
                 //     alert(data);
                 // }
-                window.location.href = "http://localhost:3000/"
+                window.location.href = "serene-scrubland-73965.herokuapp.com/budget"
             })
             // .then(console.log("successful post"),
             // function() {
