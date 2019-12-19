@@ -41,7 +41,9 @@ $(document).ready(function () {
                 // if (data) {
                 //     alert(data);
                 // }
-                window.location.href = "/chart"
+                // window.location.href = "/chart"
+                window.location.href = "/purchase";
+
             })
             // .then(console.log("successful post"),
             // function() {

@@ -11,12 +11,13 @@ $(document).ready(function () {
         // var debtExp = data.debt_e;
         // var funExp = data.fun_e;
         // let expenseArr = [mortgageExp, utilitiesExp, foodExp, insuranceExp, transportationExp, savingsExp, debtExp, funExp];
-       let expense = $("#price").val().trim();
-       let category = $("#expenses").val().trim();
-       let expenseObj = {
-           expense: expense,
-           category: `${category}_e`};
-           
+        let expense = $("#price").val().trim();
+        let category = $("#expenses").val().trim();
+        let expenseObj = {
+            expense: expense,
+            category: `${category}_e`
+        };
+
         $
             .ajax({
                 method: "PUT",
@@ -25,7 +26,7 @@ $(document).ready(function () {
             })
             .then(function () {
                 console.log("successful put request");
-                window.location.href = "/chart"
+                // window.location.href = "/chart"
             });
 
         let item = $("#item").val().trim();
@@ -36,17 +37,18 @@ $(document).ready(function () {
         }
 
         $.post("/api/purchase", purchaseObj)
-        .then(function(data) {
-            console.log("data from findAll get route",data);
-        });
+            .then(function (data) {
+                console.log("data from findAll get route", data);
+                window.location.href = "/purchase";
+                // $.get("/purchase")
+                //     .then(function (tableInfo) {
+                //         console.log("----------------------------------------")
+                //         console.log(tableInfo);
+                //         // console.log("-------------------------------------data from findAll get /purchase route", tableInfo);
 
-        $.get("/purchase")
-        .then(function(tableInfo) {
-            console.log("----------------------------------------")
-            console.log(tableInfo);
-            // console.log("-------------------------------------data from findAll get /purchase route", tableInfo);
-            
-        })
+                //     })
+            });
+
 
     });
 })
