@@ -105,6 +105,14 @@ router.post("/api/budget", async function (req, res) {
                 // res.redirect("/");
                 console.log("this comes after res.render")
                 // express.redirect("/")
+            }).then(function() {
+                db.purchases.destroy({
+                    where: {
+                        // req.user.id is currently logged in user
+                        // This is defined within auth-controller
+                        userId: req.user.id
+                    }
+                });
             })
     
         console.log("you already have a budget entry");
@@ -134,6 +142,15 @@ router.post("/api/budget", async function (req, res) {
                 year: req.body.year,
                 userId: req.user.id
             }).then(function() {
+                db.purchases.destroy({
+                    where: {
+                        // req.user.id is currently logged in user
+                        // This is defined within auth-controller
+                        userId: req.user.id
+                    }
+                });
+            })
+            .then(function() {
                 res.redirect("/")
             })
     }

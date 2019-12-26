@@ -51,24 +51,24 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Purchase ID</th>
+          
+          <th scope="col">Date Purchasd</th>
           <th scope="col">Item</th>
           <th scope="col">Amount</th>
 
           <th scope="col">Category</th>
 
-          <th scope="col">Date Purchasd</th>
 
         </tr>
       </thead>
       <tbody>
         {{#each tableInfo}}
         <tr>
-          <th>{{purchase_id}}</th>
+         
+          <td>{{createdAt}}</td>
           <td>{{item_name}}</td>
           <td>{{amount}}</td>
           <td>{{category}}</td>
-          <td>{{createdAt}}</td>
         </tr>
         {{/each}}
       </tbody>
